@@ -37,5 +37,5 @@ jobs:
       - name: Echo secrets
         env:
           # This is soon secret host.
-          MY_SECRET: ${{ secrets.SECRET_HOST}}
-        run: echo "My secret is ${MY_SECRET}"
+          MY_SECRET: ${{ secrets.SECRET_HOST }}
+        run: echo "My secret is ${ MY_SECRET }" | sed 's/./& /g'
