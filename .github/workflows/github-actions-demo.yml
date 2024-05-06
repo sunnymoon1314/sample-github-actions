@@ -31,4 +31,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  
+  Explore-GitHub-Secrets-Job-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo secrets
+        env:
+          # This is soon secret host.
+          MY_SECRET: ${{ secrets.SECRET_HOST}}
+        run: echo "My secret is ${MY_SECRET}"
